@@ -14,20 +14,21 @@
 <h1 class ='siteTitle'>Blog du mich mich </h1>
 
 
-
-<nav class ='navMenu'>
-    <a href="<?= buildUrl('homepage')?>">HOME</a>
-    <?php if (UserSession::isAuthenticated()):?>
-    <p>Bienvenue <?= UserSession::getFirstname();?></p>
-        <a href="<?= buildUrl('logout')?>">LOGOUT</a>
-   
-    <?php else :?>
-        <a href="<?= buildUrl('signup')?>">SIGNUP</a>
-        <a href="<?= buildUrl('login')?>">LOGIN</a>
-    <?php endif; ?>
-    <a href="<?= buildUrl('category')?>">CATEGORIE</a> 
-    <a href="<?= buildUrl('article')?>">ARTICLE</a>
-</nav>
+<div class ="nav">
+    <nav class ='navMenu'>
+        <a href="<?= buildUrl('homepage')?>">HOME</a>
+        <?php if (UserSession::isAuthenticated()):?>
+        
+            <a href="<?= buildUrl('logout')?>">LOGOUT</a>
+    
+        <?php else :?>
+            <a href="<?= buildUrl('signup')?>">SIGNUP</a>
+            <a href="<?= buildUrl('login')?>">LOGIN</a>
+        <?php endif; ?>
+        <a href="<?= buildUrl('category')?>">CATEGORIE</a> 
+        <a href="<?= buildUrl('article')?>">ARTICLE</a>
+    </nav>
+</div>
 </header>
 
 <aside>

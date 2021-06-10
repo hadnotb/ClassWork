@@ -50,25 +50,34 @@ class UserSession {
        
     }
     static public function getId(){
-        if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user'])) {
+        // if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user'])) 
+        if (UserSession::isAuthenticated())
+        {
             $id = $_SESSION ['user']['userId'];
             return $id;
         }
     }
     static public function getEmail(){
-        if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user'])) {
+        // if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user'])) 
+        if (UserSession::isAuthenticated())
+        {
             $email = $_SESSION ['user']['email'];
             return $email;
         }
     }
     static public function getFirstname(){
-        if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user'])) {
+        // if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user']))
+        if (UserSession::isAuthenticated())
+        {
             $firstname = $_SESSION ['user']['firstname'];
             return $firstname;
         }
     }
-    static public function getLastname(){
-        if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user'])) {
+    static public function getLastname()
+    {
+        // if (array_key_exists('user', $_SESSION) && !is_null($_SESSION['user']))
+        if (UserSession::isAuthenticated()) 
+        {
             $lastname = $_SESSION ['user']['lastname'];
             return $lastname;
         }
