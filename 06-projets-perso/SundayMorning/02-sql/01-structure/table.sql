@@ -24,7 +24,7 @@ CREATE TABLE categorie (
     PRIMARY KEY (idCategorie)
 ) ENGINE = InnoDB;
 
-CREATE TABLE article (
+CREATE TABLE model_article (
 	idArticle INT UNSIGNED NOT NULL AUTO_INCREMENT,
     libArticle VARCHAR(128) NOT NULL,
     idMarque INT UNSIGNED NULL,
@@ -41,28 +41,23 @@ CREATE TABLE article (
 	REFERENCES categorie(idCategorie)
 ) ENGINE = InnoDB;
 
-CREATE TABLE article_taille (
-	idArticle INT UNSIGNED NOT NULL,
-    idTaille INT UNSIGNED NOT NULL,
-    UNIQUE (idArticle, idTaille),
-    CONSTRAINT fk_article
-    FOREIGN KEY (idArticle)
-    REFERENCES article(idArticle),
-    CONSTRAINT fk_taille
-    FOREIGN KEY (idTaille)
-    REFERENCES taille(idTaille)
-) ENGINE = InnoDB;
 
-CREATE TABLE article_couleur (
-	idArticle INT UNSIGNED NOT NULL,
-    idCouleur INT UNSIGNED NOT NULL,
-    UNIQUE (idArticle, idCouleur),
+
+CREATE TABLE article (
+	idArt INT UNSIGNED NOT NULL,
+    idCoul INT UNSIGNED NOT NULL,
+    idTai INT UNSIGNED NOT NULL,
+    nbEle INT UNSIGNED NOT NULL,
+    UNIQUE (idArt, idCoul,idTai),
     CONSTRAINT fk_article
-    FOREIGN KEY (idArticle)
-    REFERENCES article(idArticle),
-    CONSTRAINT fk_couleur
-    FOREIGN KEY (idCouleur)
-    REFERENCES couleur(idCouleur)
+    FOREIGN KEY (idArt)
+    REFERENCES model_article(idArt),
+    CONSTRAINT fk_coul
+    FOREIGN KEY (idCoul)
+    REFERENCES couleur(idCoul),
+    CONSTRAINT fk_taille
+    FOREIGN KEY (idTai)
+    REFERENCES taille(idCouleur)
 ) ENGINE = InnoDB;
 
 
