@@ -5,7 +5,7 @@ require __DIR__ . '/../library/functions.php';
 
 
 $path = $_SERVER['PATH_INFO'] ?? '/';
-dump($path);
+
 
 
 

@@ -1,7 +1,7 @@
 <?php
 
 
-echo 'alllerallller';
+
 
 // $dsn = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=UTF8';
 

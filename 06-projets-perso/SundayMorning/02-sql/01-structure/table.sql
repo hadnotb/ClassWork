@@ -44,20 +44,20 @@ CREATE TABLE model_article (
 
 
 CREATE TABLE article (
-	idArt INT UNSIGNED NOT NULL,
+	idArticle INT UNSIGNED NOT NULL,
     idCoul INT UNSIGNED NOT NULL,
     idTai INT UNSIGNED NOT NULL,
     nbEle INT UNSIGNED NOT NULL,
-    UNIQUE (idArt, idCoul,idTai),
+    UNIQUE (idArticle, idCouleur,idTaille),
     CONSTRAINT fk_article
-    FOREIGN KEY (idArt)
-    REFERENCES model_article(idArt),
-    CONSTRAINT fk_coul
-    FOREIGN KEY (idCoul)
-    REFERENCES couleur(idCoul),
+    FOREIGN KEY (idArticle)
+    REFERENCES model_article(idArticle),
+    CONSTRAINT fk_couleur
+    FOREIGN KEY (idCouleur)
+    REFERENCES couleur(idCouleur),
     CONSTRAINT fk_taille
-    FOREIGN KEY (idTai)
-    REFERENCES taille(idCouleur)
+    FOREIGN KEY (idTaille)
+    REFERENCES taille(idTaille)
 ) ENGINE = InnoDB;
 
 

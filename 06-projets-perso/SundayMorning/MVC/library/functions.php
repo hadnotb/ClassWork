@@ -3,6 +3,10 @@ function asset(string $path): string
 {
    return SITE_BASE_URL . '/' . $path;
 }
+// function BaseL(string $path): string
+// {
+//    return SITE_BASE_URL. '/../' . $path;
+// }
 
 function buildUrl(string $routeName, array $params = []): string
 {

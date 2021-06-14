@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Sunday Morning Aix</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?=asset('css/style.css');?>">
 </head>
-<body>
-<header class = 'siteHeader'>
-    <section class =''>
-        <img src="" alt="" >
-        <h1>SundayMorning</h1>
-        <nav>
+<body class = "PageWrapper">
+    <header class = 'SiteHeader'>
+        <div class ='SiteHeader-background'>
+            <img src="<?=asset('img/SundayArc.svg');?>" alt="" class="SiteHeader-logo">
+        </div>
+           
+        <nav class = 'SiteHeader-nav'>
+            <a href="#" class="SiteHeader-nav-link burgerOn"><i class="fas fa-bars"></i></a>
+            <a href="#" class="SiteHeader-nav-link noBurger"><i class="fas fa-times"></i></a>
+            <a href="#" class="SiteHeader-nav-link">Nouveautés </a>
+            <a href="#" class="SiteHeader-nav-link">Marques</a>
+            <a href="#" class="SiteHeader-nav-link">Promos</a>
+            <a href="#" class="SiteHeader-nav-link">Categorie</a>
+              
         </nav>
-    </section>
-    <section>
-        <img src="" alt="">
-        <nav>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>   
-        </nav>
-        <img src="" alt="">
-        <img src="" alt="">
-    </section>   
-</header>
-<main>
+    </header>
+<main class = "Principal">
     <?php include TEMPLATE_DIR . '/' . $template . '.phtml';?>
 </main>
 <aside>
