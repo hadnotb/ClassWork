@@ -32,7 +32,7 @@ $routes = [
                     'controller' => 'logout.php'],                  
 
 ];
-
+define('ROUTES', $routes);
 
 $controller = null;
 foreach ($routes as $route) {
@@ -53,4 +53,4 @@ echo $content ;
 
 
 
-require('../controller/article.php');
+// require('../controller/article.php');

@@ -1,13 +1,13 @@
 <?php
-// namespace App\Framework;
+namespace App\Framework;
 
-// abstract class AbstractModel {
+abstract class AbstractModel {
 
-//     protected $database ;
+    protected $database ;
 
-//     public function __construct()
-//     {
-//         $this -> database = new Database ();
-//     }
+    public function __construct()
+    {
+        $this -> database = new Database ();
+    }
 
-// }
+}

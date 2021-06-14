@@ -1,5 +1,8 @@
 <?php
+
+
 echo 'PAGE DACCUEUIL';
+
 $dsn = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=UTF8';
 
 $pdo = new PDO($dsn, DB_USER, DB_PASSWORD, [
