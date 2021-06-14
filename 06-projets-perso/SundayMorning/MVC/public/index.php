@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/../config.php';
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../library/functions.php';
 
 
 $path = $_SERVER['PATH_INFO'] ?? '/';
@@ -15,7 +16,8 @@ $routes = [
                'controller'=>'home.php'],
     
 "article" => ['path'=>'/article',
-                'controller'=>'article.php'],
+                'controller'=>'article.php',
+             'isParam' => true],
                 
 
 
@@ -35,20 +37,37 @@ $routes = [
 define('ROUTES', $routes);
 
 $controller = null;
+// --------boucle qui attribue les controller au path avec un slash
+$getParams = array();
 foreach ($routes as $route) {
-   if ($route['path'] === $path) {
+
+    $curPath = $path;
+    $isParam = (isset($route['isParam']) && $route['isParam']);
+    if($isParam) {
+        $getParams = explode('/', $path);
+        $curPath = '/' . $getParams[1];
+    }
+
+   if ($route['path'] === $curPath) {
        $controller = $route['controller'];
        break;
    }
 }
+// --------boucle qui attribue les controller au path avec le ?id=...
+// foreach ($routes as $route) {
+//     if ($route['path'] === $path) {
+//         $controller = $route['controller'];
+//         break;
+//     }
+//  }
 
 $controller = $controller ?? '404.php';
 
-ob_start();
+// ob_start();
 
 
-require CONTROLLER_DIR . '/' . $controller;
-$content = ob_get_clean();
+$content = require CONTROLLER_DIR . '/' . $controller;
+// $content = ob_get_clean();
 echo $content ;
 
 

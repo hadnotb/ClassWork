@@ -1,8 +1,15 @@
 <?php
-
+/*dump($_GET);
 
 echo 'PAGE Article';
-if (!array_key_exists('id', $_GET) || !$_GET['id'] || !ctype_digit($_GET['id']) ) {
+if (!isset($_GET['idArt']) || !ctype_digit($_GET['idArt']) ) {
+   include CONTROLLER_DIR . '/404.php';
+   exit;
+}*/
+
+echo 'PAGE Article';
+dump($getParams);
+if(count($getParams) < 3) {
    include CONTROLLER_DIR . '/404.php';
    exit;
 }
@@ -14,7 +21,7 @@ $pdo = new PDO($dsn, DB_USER, DB_PASSWORD, [
    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-$idArt = $_GET['idArt'];
+$idArt = $getParams[2];
 
 $sql = 'call Sp_modelArticleLire(:idArt)';
 
@@ -24,5 +31,7 @@ $articles = $pdoStatement->fetchAll();
 
 dump($articles);
 
-include TEMPLATE_DIR . '/home.phtml';
+include TEMPLATE_DIR . '/base.phtml';
+
+// return render ('article');
 

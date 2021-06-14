@@ -5,14 +5,11 @@ use App\Framework\AbstractModel;
 
 class ArticleModel extends AbstractModel {
 
-    function getOneArticle(int $id): array
+    function getOneArticle(int $idArt): array
     {
-       $sql = 'SELECT *
-               FROM article art
-               INNER JOIN categorie cat on cat.idCategorie = art.idCategorie
-               WHERE art.idArticle = ?';
+       $sql = 'call Sp_modelArticleLire(:idArt)';
     
-       $article = $this -> database -> getOneResult($sql,[$id]);
+       $article = $this -> database -> getOneResult($sql,['idArt' => $idArt]);
     
        return $article;
 
