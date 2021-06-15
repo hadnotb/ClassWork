@@ -8,7 +8,7 @@ if (!isset($_GET['idArt']) || !ctype_digit($_GET['idArt']) ) {
 }*/
 
 echo 'PAGE Article';
-dump($getParams);
+
 if(count($getParams) < 3) {
    include CONTROLLER_DIR . '/404.php';
    exit;
@@ -28,9 +28,9 @@ $sql = 'call Sp_modelArticleLire(:idArt)';
 $pdoStatement = $pdo->prepare($sql);
 $pdoStatement->execute(array('idArt' => $idArt));
 $articles = $pdoStatement->fetchAll();
-
-dump($articles);
-
+$article = $articles[0];
+$images = explode(";", $article["imgLst"]);
+$template = 'article';
 include TEMPLATE_DIR . '/base.phtml';
 
 // return render ('article');

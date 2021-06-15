@@ -1,12 +1,11 @@
 <section class ="MainContent">
+    <?=dump('allller')?>
     <div class="MainContent-ArticlePicture">
-        <img src="" alt="" class="ArticlePicture-articleimg">
-        <img src="" alt="" class="ArticlePicture-articleimg">
-        <img src="" alt="" class="ArticlePicture-articleimg">
-        <img src="" alt="" class="ArticlePicture-articleimg">
-        <img src="" alt="" class="ArticlePicture-articleimg">
+        <?php foreach($images as $image):?>
+            <img src="<?php echo(IMAGE_URL . '/' . $image); ?>" alt="" class="ArticlePicture-articleimg" />
+        <?php endforeach ?>
     </div>
-    
+    <h1>HELLOO</h1>
     <div class="MainContent-ArticleInfo">
        <h2 class="ArticleInfo-titreArticle">Titre</h2>
        <p class="ArticleInfo-prixArticle"></p>
