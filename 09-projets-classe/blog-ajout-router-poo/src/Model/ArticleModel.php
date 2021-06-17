@@ -11,7 +11,8 @@ class ArticleModel extends AbstractModel {
        $sql = 'SELECT *
                FROM article art
                INNER JOIN categorie cat on cat.idCategorie = art.idCategorie
-               ORDER BY created_at DESC';
+               INNER JOIN user us on art.idUser = us.idUser
+               ORDER BY art.created_at DESC';
     
        $articles = $this -> database -> getAllResults($sql);
     
@@ -23,6 +24,7 @@ class ArticleModel extends AbstractModel {
        $sql = 'SELECT *
                FROM article art
                INNER JOIN categorie cat on cat.idCategorie = art.idCategorie
+               INNER JOIN user us on art.idUser = us.idUser
                WHERE art.idArticle = ?';
     
        $article = $this -> database -> getOneResult($sql,[$id]);
@@ -51,5 +53,6 @@ class ArticleModel extends AbstractModel {
         $database = new Database();
         $database -> executeQuery($sql, [$title,$content,$idCat]);
    }
+  
     
 }

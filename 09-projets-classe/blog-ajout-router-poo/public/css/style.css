@@ -1,28 +1,37 @@
 body {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    margin : 0 ;
-     
+  background-color: #d48585;
+  color: black;
+  margin: 0;
 }
-.siteHeader{
-    display: block;
 
-    background-color: rgb(255, 255, 255);
-    height: 250px;
-   
+.siteHeader {
+  display: block;
+  background-color: white;
+  height: 250px;
 }
-.siteTitle{
-    justify-content: flex-start;
-   
+
+.navMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.navMenu{
-    box-sizing :border-box;
-    justify-content : flex-end;
-    align-items : flex-end;
+
+.siteTitle {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
-.nav{
-    display: flex;
-    background-color: grey;
-    flex-direction: column;
-    align-items: space-between;
+
+tr, th, td {
+  border: 2px solid black;
 }
+/*# sourceMappingURL=style.css.map */

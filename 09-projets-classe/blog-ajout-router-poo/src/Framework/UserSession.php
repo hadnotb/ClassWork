@@ -45,8 +45,9 @@ class UserSession {
     }
     static public function logout(){
         SELF::sessionCheck();
+        $_SESSION ['user'] = null;
         session_destroy();
-        $_SESSION ['user']= null;
+        
        
     }
     static public function getId(){

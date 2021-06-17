@@ -34,7 +34,16 @@ $routes = [
                     
 "admin"=> ['path' => '/admin',
                 'controller' => 'Admin\\Admin',
-                'method' => 'index']                 
+                'method' => 'index'],
+
+"admin_article_new" => ['path' => '/admin/article/new',
+                'controller' => 'Admin\\Article',
+                'method' => 'new'],
+                
+"admin_article_edit" => ['path' => '/admin/article/edit',
+                'controller' => 'Admin\\Article',
+                'method' => 'edit']                   
+                 
 
 ];
 define('ROUTES', $routes);
