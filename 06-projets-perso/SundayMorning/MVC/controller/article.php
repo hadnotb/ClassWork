@@ -7,7 +7,7 @@ if (!isset($_GET['idArt']) || !ctype_digit($_GET['idArt']) ) {
    exit;
 }*/
 
-echo 'PAGE Article';
+
 
 if(count($getParams) < 3) {
    include CONTROLLER_DIR . '/404.php';
@@ -31,6 +31,8 @@ $articles = $pdoStatement->fetchAll();
 $article = $articles[0];
 $images = explode(";", $article["imgLst"]);
 $template = 'article';
+dump($article);
+dump($images);
 include TEMPLATE_DIR . '/base.phtml';
 
 // return render ('article');

@@ -1,35 +1,45 @@
-<section class ="MainContent">
-    <?=dump('allller')?>
-    <div class="MainContent-ArticlePicture">
+
+    
+<section class="MainContent">
+    <figure class="MainContent-mainPic">
+        <img class='MainContent-mainPic-img' src="<?php echo(IMAGE_URL . '/' . $images[0]); ?>" alt="">
+    </figure>
+
+    <figure class="MainContent-vigPic">
         <?php foreach($images as $image):?>
-            <img src="<?php echo(IMAGE_URL . '/' . $image); ?>" alt="" class="ArticlePicture-articleimg" />
+                <img src="<?php echo(IMAGE_URL . '/' . $images[1]); ?>" alt="" class="ArticlePicture-articleimg" />
         <?php endforeach ?>
-    </div>
-    <h1>HELLOO</h1>
-    <div class="MainContent-ArticleInfo">
-       <h2 class="ArticleInfo-titreArticle">Titre</h2>
-       <p class="ArticleInfo-prixArticle"></p>
-    </div>
-    <div class="ArticleInfo-coulArticle">
-        <h2 class="ArticleInfo-coulArticle-titre">Couleur</h2>
-        <img src="" alt="" class="coulVignet">
-        <img src="" alt="" class="coulVignet">
-        <img src="" alt="" class="coulVignet">
-        <img src="" alt="" class="coulVignet">
-        <img src="" alt="" class="coulVignet">
-    </div>
-    <div class="ArticleInfo-taiArticle">
-        <h2 class="ArticleInfo-taiArticle">Taille</h2>
-        <img src="" alt="" class="taiVignet">
-        <img src="" alt="" class="taiVignet">
-        <img src="" alt="" class="taiVignet">
-        <img src="" alt="" class="taiVignet">
-        <img src="" alt="" class="taiVignet">
-    </div>
-    <button class ='addButton'></button>
-    <div>
-        <h2 class="ArticleInfo-detailsTitre">Details</h2>
-        <p class="detailsContent"></p>
-    </div>
+        <img src="<?php echo(IMAGE_URL . '/' . $images[1]); ?>" alt="" class="ArticlePicture-articleimg" />
+    </figure>
+
+    <section class="MainContent-ArticleInfo">
+        
+        <p class="ArticleInfo-nomArticle"><?=$article['libArticle']?></h2>
+        <p class="ArticleInfo-prixArticle"><?=$article['prix']?></p>
+        
+       
+        <p class="ArticleInfo-coulArticle-titre">Couleur</p>
+        <p><?=$article['listcoul']?></p>
+        <img src="../public/img/vignetteNoire.jpg" alt="" class="vignetNoire">
+        <img src="../public/img/VignetteVerte.jpg" alt="" class="vignetVerte">
+        <img src="img/VignetteJaune.jpg" alt="" class="vignetJaune">
+        <img src="../public/VignetteRouge.jpg" alt="" class="vignetRouge">
+            
+      
+        <div class="ArticleInfo-taiArticle">
+            <p class="ArticleInfo-taiArticle">Taille</p>
+            <p><?=$article['artail']?></p>
+            <img src="" alt="" class="taiVignet">
+            <img src="" alt="" class="taiVignet">
+            <img src="" alt="" class="taiVignet">
+            <img src="" alt="" class="taiVignet">
+            <img src="" alt="" class="taiVignet">
+        </div>
+        <button class ='addButton'>Ajouter au panier</button>
+        
+        <p class="ArticleInfo-detailsTitre">Details</p>
+        <p class="detailsContent"><?=$article['details']?></p>
+        
+    </section>
 
 </section>
